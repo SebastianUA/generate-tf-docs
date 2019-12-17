@@ -1,47 +1,3 @@
-# generate-tf-docs
-Generation Terraform documentation based on variable.tf & outputs.tf files of the module. 
-
-
-## Usage
-----------------------
-
-To get a help, run:
-```bash
-$ python3 generate_docs_pyhcl.py -h
-usage: python3 script_name.py {ARGS}
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --version             show program's version number and exit
-  --md folder, --mdir folder
-                        Set the directory where module exists
-  --ed folder, --edir folder
-                        Set the directory where example exists
-
-created by Vitalii Natarov
-
-```
-
-So, to generate docs, run:
-```bash
-$ python3 generate_docs_pyhcl.py --mdir="/Users/captain/Projects/Terraform/aws/modules/nlb" --edir="/Users/captain/Projects/Terraform/aws/examples/nlb"
-Looks like that the [OUTPUT_nlb.md] file has been created: /Users/captain/Projects/Python/Terraform
---- 0.04 seconds ---
- ============================================================
- ==========================FINISHED==========================
- ============================================================
-```
-
-Where:
-- python3 - Python
-- generate_docs_pyhcl.py - The script's name.
-- --mdir="/Users/captain/Projects/Terraform/aws/modules/nlb" - It's path to some module (For example: nlb).
-- --edir="/Users/captain/Projects/Terraform/aws/examples/nlb" - It's path to where your project is (For example I used that path).
-
-## Output file will be something like this one...
-----------------------
-
-```bash
 # Work with AWS NLB via terraform
 
 A terraform module for making NLB.
@@ -209,15 +165,3 @@ License
 =======
 
 Apache 2 Licensed. See [LICENSE](https://github.com/SebastianUA/terraform/blob/master/LICENSE) for full details.
-
-```
-
-## Authors
-=======
-
-Created and maintained by [Vitaliy Natarov](https://github.com/SebastianUA)(vitaliy.natarov@yahoo.com).
-
-License
-=======
-
-Apache 2 Licensed. See [LICENSE](https://github.com/SebastianUA/generate-tf-docs/blob/master/LICENSE) for full details.
