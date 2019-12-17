@@ -5,6 +5,11 @@ Generation Terraform documentation based on variable.tf & outputs.tf files of th
 ## Usage
 ----------------------
 
+NOTE: Of course, you must install Python3 + pip and the next module:
+```bash
+$ pip3 install pyhcl
+```
+
 To get a help, run:
 ```bash
 $ python3 generate_docs_pyhcl.py -h
@@ -38,10 +43,35 @@ Where:
 - --mdir="/Users/captain/Projects/Terraform/aws/modules/nlb" - It's path to some module (For example: nlb).
 - --edir="/Users/captain/Projects/Terraform/aws/examples/nlb" - It's path to where your project is (For example I used that path).
 
+The `/Users/captain/Projects/Terraform/aws/modules/nlb` directory have to looks like the following one:
+```bash
+$ tree /Users/captain/Projects/Terraform/aws/modules/nlb
+
+/Users/captain/Projects/Terraform/aws/modules/nlb
+|-- nlb.tf
+|-- outputs.tf
+`-- variables.tf
+
+0 directories, 3 files
+```
+
+The `/Users/captain/Projects/Terraform/aws/examples/nlb` folder have to looks like the following one:
+```bash
+$ tree /Users/captain/Projects/Terraform/aws/examples/nlb
+
+/Users/captain/Projects/Terraform/aws/examples/nlb
+|-- README.md
+|-- main.tf
+`-- terraform.tfstate
+
+0 directories, 3 files
+
+```
+
 ## Output file will be something like this one...
 ----------------------
 
-```bash
+`````bash
 # Work with AWS NLB via terraform
 
 A terraform module for making NLB.
@@ -210,7 +240,7 @@ License
 
 Apache 2 Licensed. See [LICENSE](https://github.com/SebastianUA/terraform/blob/master/LICENSE) for full details.
 
-```
+`````
 
 ## Authors
 =======
