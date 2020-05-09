@@ -74,6 +74,11 @@ Apache 2 Licensed. See [LICENSE]\
                     for variable in obj['variable']:
                         description = obj['variable'][variable]['description'] or '""'
                         default = obj['variable'][variable]['default'] or '""'
+                        if default == None:
+                            default = 'null'
+                        elif default == "":
+                            default = '""'
+                            
                         line = '- `{}` - {} (`default = {}`)\n'.format(variable,
                                                                        description,
                                                                        default)
@@ -85,7 +90,12 @@ Apache 2 Licensed. See [LICENSE]\
                         # Dict contains only a single key, just take it
                         variable = next(iter(section))
                         description = section[variable]['description'][0] or '""'
-                        default = section[variable]['default'][0] or '""'
+                        default = section[variable]['default'][0]
+                        if default == None:
+                            default = 'null'
+                        elif default == "":
+                            default = '""'
+
                         line = '- `{}` - {} (`default = {}`)\n'.format(variable,
                                                                        description,
                                                                        default)
