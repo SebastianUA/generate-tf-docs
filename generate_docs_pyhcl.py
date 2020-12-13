@@ -164,7 +164,7 @@ def main():
                         metavar='DIR', type=dir_path, required=True)
     parser.add_argument('--hcl-version', dest='hcl_version',
                         help='Set version of hcl to use for parsing terraform',
-                        metavar='HCL VERSION', type=int, default=1, choices=[1, 2])
+                        metavar='HCL VERSION', type=int, default=2, choices=[1, 2])
     args = parser.parse_args()
 
     tf_generator = TFGenerator(args.m_directory,
