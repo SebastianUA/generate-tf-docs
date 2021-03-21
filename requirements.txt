@@ -1,2 +1,4 @@
 pyhcl==0.4.4
 python-hcl2==2.0.0
+
+hcl~=0.2.1
