@@ -41,22 +41,8 @@ Apache 2 Licensed. See [LICENSE]\
         self.hcl_version = hcl_version
         self.parent_dir = self.get_parent_dir(m_dir)
         self.file_out = '{}/README.md'.format(self.e_dir)
-        #
-        # self.paths = "/Users/captain/Projects/Terraform/aws/modules"
-        # self.root_dirs = self.get_root_dirs(self.paths)
 
     @classmethod
-    # def get_root_dirs(self, path):
-    #     root_dirs = []
-    #     for root, dirs, files in os.walk(self.paths):
-    #         root_dirs.append(root)
-    #         # print("root: ", root)
-    #         # print("dirs: ", dirs)
-    #         # print("files: ", files)
-    #     print(root_dirs[1:])
-    #
-    #     return root_dirs
-
     def get_parent_dir(cls, path):
         return path.strip().split('/')[-1]
 
@@ -138,8 +124,6 @@ Apache 2 Licensed. See [LICENSE]\
                     for section in obj['output']:
                         # Dict contains only a single key, just take it
                         output = next(iter(section))
-                        print("section:::: ", section)
-                        print("output:::: ", output)
                         description = section[output]['description'][0] or '""'
                         line = '- `{}` - {}'.format(output, description)
                         with open(self.file_out, 'a') as f_out:
@@ -152,10 +136,9 @@ Apache 2 Licensed. See [LICENSE]\
             f_out.write(self.AUTHORS + "\n")
 
         print('The script ran from: {0}'.format(os.getcwd()))
-        print('The "{0}" has been created/updated'.format(self.file_out))
+        print('{0} has been created/updated'.format(self.file_out))
 
     def generate(self):
-        # self.get_root_dirs()
         self.put_header()
         self.generate_inputs()
         self.generate_outputs()
