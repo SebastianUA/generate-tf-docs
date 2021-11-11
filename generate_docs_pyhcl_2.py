@@ -10,7 +10,7 @@ from lib.parser import ColoredArgParser
 
 
 class TFGenerator(object):
-    TF_HEADER = """# Work with AWS {0} via terraform
+    TF_HEADER = """# Work with {0} via terraform
 
 A terraform module for making {0}.
 
