@@ -55,7 +55,7 @@ Apache 2 Licensed. See [LICENSE]\
             f_out.write("```\n")
             f_main = open(examples_file)
             f_out.writelines(f_main.readlines())
-            f_out.write("```\n\n")
+            f_out.write("\n```\n\n")
 
     def generate_inputs(self):
         tf_file_variables = os.path.join(self.m_dir, 'variables.tf')
